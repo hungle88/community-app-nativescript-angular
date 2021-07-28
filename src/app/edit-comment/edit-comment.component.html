@@ -1,0 +1,24 @@
+<StackLayout
+  horizontalAlignment="center"
+  verticalAlignment="center"
+  style="width: 500px;"
+  class="form"
+  
+>
+  <StackLayout class="input-field">
+    <TextView
+      #comment
+      [hint]="'Comment Content: ' + commentContent"
+      class="input"
+    ></TextView>
+  </StackLayout>
+
+  <FlexboxLayout>
+    <Button
+      style="background-color: rgb(51, 133, 240);color: white"
+      text="Save"
+      class="btn btn-primary"
+      (tap)="onSubmit(comment.text)"
+    ></Button>
+  </FlexboxLayout>
+</StackLayout>

@@ -1,0 +1,45 @@
+<ActionBar title="Provider List">
+  <NavigationButton visibility="collapsed"></NavigationButton>
+
+  <ActionItem ios.position="right">
+    <GridLayout width="100">
+      <button
+        text="Log Out"
+        (tap)="logout()"
+        style="background-color: grey; color: white; height: 40px; text-align: center;"
+      ></button>
+    </GridLayout>
+  </ActionItem>
+</ActionBar>
+
+<StackLayout>
+  <GridLayout>
+    <ListView [items]="providerList">
+      <div *ngFor="let provider of providerList">
+        <StackLayout>
+          <StackLayout>
+            <Label
+              [text]="
+                'Created Date: ' + (provider.createdAt | date: 'shortDate')
+              "
+            ></Label>
+            <Label [text]="'Name: ' + provider.fullname"></Label>
+            <Label [text]="'Content: ' + provider.content"></Label>
+
+            <Label
+              [text]="'Address: ' + provider.city + ', ' + provider.state"
+            ></Label>
+          </StackLayout>
+          <StackLayout>
+            <Button
+              text="Detail"
+              (tap)="onDetail(provider)"
+              class="btn btn-primary"
+              style="background-color: rgb(51, 133, 240); color: white"
+            ></Button
+          ></StackLayout>
+        </StackLayout>
+      </div>
+    </ListView>
+  </GridLayout>
+</StackLayout>

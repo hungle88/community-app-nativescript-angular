@@ -1,0 +1,72 @@
+<StackLayout
+  horizontalAlignment="center"
+  verticalAlignment="center"
+  style="width: 500px;"
+  class="form"
+  
+>
+  <StackLayout class="input-field">
+    <TextField
+      #fullName
+      [hint]="'Name: ' + userDetail.fullname"
+      class="input"
+    ></TextField>
+
+    <TextField
+      #userEmail
+      [hint]="'Email: ' + userDetail.email"
+      class="input"
+    ></TextField>
+    <TextField
+      #userPassword
+      hint="Password: ***********"
+      secure="true"
+      class="input"
+    ></TextField>
+    <TextField
+      #address
+      [hint]="'Address: ' + userDetail.address"
+      class="input"
+    ></TextField>
+    <TextField
+      #city
+      [hint]="'City: ' + userDetail.city"
+      class="input"
+    ></TextField>
+    <TextField
+      #state
+      [hint]="'State: ' + userDetail.state"
+      class="input"
+    ></TextField>
+    <TextField
+      #zipcode
+      [hint]="'Zipcode: ' + userDetail.zipcode"
+      class="input"
+    ></TextField>
+    <TextField
+      #phone
+      [hint]="'Phone: ' + userDetail.phone"
+      class="input"
+    ></TextField>
+  </StackLayout>
+
+  <FlexboxLayout>
+    <Button
+      style="background-color: rgb(51, 133, 240);color: white"
+      text="Save"
+      class="btn btn-primary"
+      (tap)="
+        onSubmit(
+          fullName.text,
+          userEmail.text,
+          userPassword.text,
+          address.text,
+          city.text,
+          state.text,
+          zipcode.text,
+          phone.text
+        )
+      "
+    ></Button>
+  </FlexboxLayout>
+</StackLayout>

@@ -1,0 +1,90 @@
+<GridLayout rows="600,*">
+  <ScrollView row="0">
+    <StackLayout>
+      <Label
+        [text]="'Created Date: ' + (postDetail.createdAt | date: 'shortDate')"
+      ></Label>
+      <Label [text]="'Name: ' + postDetail.fullname"></Label>
+      <Label [text]="'Content: ' + postDetail.content"></Label>
+      <Label
+        [text]="'Address: ' + postDetail.city + ', ' + postDetail.state"
+      ></Label>
+
+      <Placeholder
+        *ngIf="
+          userId != postDetail.ownerId;
+          then thenTemplate;
+          else elseTemplate
+        "
+      >
+      </Placeholder>
+      <ng-template #thenTemplate>
+        <button
+          text="  Contact this person"
+          class="btn btn-primary"
+          style="background-color: rgb(51, 133, 240); color: white"
+          (tap)="onDetail(ownerId)"
+        ></button>
+      </ng-template>
+      <ng-template #elseTemplate>
+        <FlexboxLayout flexDirection="row">
+          <button
+            text="Edit"
+            class="btn btn-primary"
+            style="background-color: rgb(51, 133, 240); color: white"
+            (tap)="onEditPost()"
+          ></button>
+          <button
+            text="Delete"
+            class="btn btn-primary"
+            style="background-color: rgb(51, 133, 240); color: white"
+            (tap)="onDeletePost()"
+          ></button>
+        </FlexboxLayout>
+      </ng-template>
+      <Label text="Comments: "></Label>
+      <div *ngIf="postDetail?.comments.length == 0">
+        <Label text="This post doesn't have any comment"></Label>
+      </div>
+      <Label text="Your comment: "></Label>
+      <textView
+        hint="Type Your Comment Here ..."
+        #comment
+        rows="8"
+        cols="60"
+      ></textView
+      ><br />
+      <button
+        style="background-color: rgb(51, 133, 240); color: white"
+        text="Submit"
+        (tap)="addComment(comment.text)"
+      ></button>
+
+      <ul>
+        <div *ngFor="let comment of postDetail.comments">
+          <li>
+            <Label [text]="comment?.createdAt | date: 'shortDate'"></Label>
+            <Label [text]="'Fullname: ' + comment?.fullname"></Label>
+
+            <Label [text]="comment?.commentContent"></Label>
+
+            <div *ngIf="comment.commentOwnerId == userId">
+              <FlexboxLayout flexDirection="row">
+                <button
+                  style="background-color: rgb(51, 133, 240); color: white;"
+                  text="Edit"
+                  (tap)="onEditComment(comment)"
+                ></button>
+                <button
+                  style="background-color: rgb(51, 133, 240); color: white; "
+                  text="Delete"
+                  (tap)="onDeleteComment(comment._id)"
+                ></button>
+              </FlexboxLayout>
+            </div>
+          </li>
+        </div>
+      </ul>
+    </StackLayout>
+  </ScrollView>
+</GridLayout>

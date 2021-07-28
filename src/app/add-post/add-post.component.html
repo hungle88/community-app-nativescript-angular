@@ -1,0 +1,36 @@
+<ActionBar title="Add New Post"> </ActionBar>
+
+<StackLayout style="width: 500px; margin-top: 50px;" class="form">
+  <StackLayout class="input-field">
+    <FlexboxLayout flexDirection="row">
+      <Label text="Type: "></Label>
+
+      <DropDown
+        #dd
+        itemsTextAlignment="center"
+        [items]="items"
+        [(ngModel)]="selectedIndex"
+        (selectedIndexChanged)="onchange($event)"
+        (opened)="onopen()"
+        (closed)="onclose()"
+        style="width: 100;background-color: rgb(51, 133, 240);color: white; text-align: center;"
+      ></DropDown
+    ></FlexboxLayout>
+
+    <TextView
+      required
+      #content
+      hint="Type Your Post Here..."
+      class="input"
+    ></TextView>
+    <TextField required #city hint="City" class="input"></TextField>
+    <TextField required #state hint="State" class="input"></TextField>
+  </StackLayout>
+
+  <Button
+    style="background-color: rgb(51, 133, 240);color: white"
+    text="Add"
+    class="btn btn-primary"
+    (tap)="onSubmit(content.text, city.text, state.text)"
+  ></Button>
+</StackLayout>

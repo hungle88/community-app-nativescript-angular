@@ -1,0 +1,26 @@
+<StackLayout
+  horizontalAlignment="center"
+  verticalAlignment="center"
+  style="width: 500px;"
+  class="form"
+  style="background-color: white;color: black "
+>
+  <StackLayout class="input-field" >
+
+    <TextView
+      #postContent
+      [hint]="'Content: ' + postDetail.content"
+      class="input"
+    ></TextView>
+
+  </StackLayout>
+
+  <FlexboxLayout>
+    <Button
+      style="background-color: rgb(51, 133, 240);color: white"
+      text="Save"
+      class="btn btn-primary"
+      (tap)="onSubmit(postContent.text)"
+    ></Button>
+  </FlexboxLayout>
+</StackLayout>

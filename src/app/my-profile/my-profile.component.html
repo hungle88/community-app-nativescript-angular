@@ -1,0 +1,24 @@
+<ActionBar title="My Profile">
+  <NavigationButton></NavigationButton>
+</ActionBar>
+
+<StackLayout>
+  <StackLayout>
+    <Label [text]="'Name: ' + userDetail.fullname"></Label>
+
+    <Label [text]="'Email: ' + userDetail.email"></Label>
+    <Label [text]="'Password: *********** '"></Label>
+    <Label [text]="'Address: ' + userDetail.address"></Label>
+    <Label [text]="'City: ' + userDetail.city"></Label>
+
+    <Label [text]="'Zipcode: ' + userDetail.zipcode"></Label>
+
+    <Label [text]="'Phone: ' + userDetail.phone"></Label>
+
+    <button
+      style="background-color: rgb(51, 133, 240);color: white"
+      text="Edit"
+      (tap)="onEdit()"
+    ></button>
+  </StackLayout>
+</StackLayout>

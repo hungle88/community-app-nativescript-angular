@@ -1,0 +1,39 @@
+<ActionBar title="Request List">
+  <NavigationButton visibility="collapsed"></NavigationButton>
+
+  <ActionItem ios.position="right">
+    <GridLayout width="100">
+      <button
+        text="Log Out"
+        (tap)="logout()"
+        style="background-color: grey; color: white; height: 40px; text-align: center;"
+      ></button>
+    </GridLayout>
+  </ActionItem>
+</ActionBar>
+
+<StackLayout>
+  <GridLayout>
+    <ListView [items]="requestList">
+      <div *ngFor="let request of requestList">
+        <StackLayout>
+          <Label
+            [text]="'Created Date: ' + (request.createdAt | date: 'shortDate')"
+          ></Label>
+          <Label [text]="'Name: ' + request.fullname"></Label>
+          <Label [text]="'Content: ' + request.content"></Label>
+
+          <Label
+            [text]="'Address: ' + request.city + ', ' + request.state"
+          ></Label>
+          <Button
+            text="Detail"
+            (tap)="onDetail(request)"
+            class="btn btn-primary"
+            style="background-color: rgb(51, 133, 240); color: white"
+          ></Button>
+        </StackLayout>
+      </div>
+    </ListView>
+  </GridLayout>
+</StackLayout>

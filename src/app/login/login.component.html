@@ -1,0 +1,39 @@
+<ActionBar title="Login Page">
+  <NavigationButton visibility="collapsed"></NavigationButton>
+</ActionBar>
+<StackLayout
+  horizontalAlignment="center"
+  verticalAlignment="center"
+  style="width: 500px;"
+  class="form"
+>
+<!-- <Image src="~/app/img/logo.png" stretch="none" style="text-align: center; align-self: center;margin-bottom: 80;"></Image> -->
+
+  <StackLayout class="input-field">
+    <TextField #userEmail hint="Email" class="input"></TextField>
+  </StackLayout>
+
+  <StackLayout class="input-field">
+    <TextField
+      #userPassword
+      hint="Password"
+      secure="true"
+      class="input"
+    ></TextField>
+  </StackLayout>
+
+  <FlexboxLayout flexDirection="row">
+    <Button
+      style="background-color: rgb(51, 133, 240); color: white;"
+      text="Log In"
+      class="btn btn-primary"
+      (tap)="onSubmit(userEmail.text, userPassword.text)"
+    ></Button>
+    <Button
+      style="background-color: rgb(51, 133, 240); color: white"
+      text="Sign Up"
+      class="btn btn-primary"
+      (tap)="onSignUp()"
+    ></Button>
+  </FlexboxLayout>
+</StackLayout>
