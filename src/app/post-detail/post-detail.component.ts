@@ -22,7 +22,7 @@ export class PostDetailComponent implements OnInit {
   ) {
     this.id = this.route.snapshot.params.id;
     this.userId = AppSettings.getString("userId");
-   
+
     console.log("this.id");
 
     console.log(this.id);
@@ -57,6 +57,8 @@ export class PostDetailComponent implements OnInit {
         e => {}
       );
     }, 1000);
+    console.log("this.commentState");
+    console.log(this.commentState);
   }
 
   onEditPost() {
@@ -91,15 +93,16 @@ export class PostDetailComponent implements OnInit {
 
   onDeleteComment(comId: any) {
     this.main.deleteComment(this.id, comId);
-
-    this.main.getPostDetail(this.id).then(
-      (response: HttpResponse) => {
-        const content = response.content;
-        this.postDetail = JSON.parse(JSON.stringify(content))[0];
-        console.log(this.postDetail);
-      },
-      e => {}
-    );
+    setTimeout(() => {
+      this.main.getPostDetail(this.id).then(
+        (response: HttpResponse) => {
+          const content = response.content;
+          this.postDetail = JSON.parse(JSON.stringify(content))[0];
+          console.log(this.postDetail);
+        },
+        e => {}
+      );
+    }, 1000);
   }
 
   ngOnInit(): void {}
