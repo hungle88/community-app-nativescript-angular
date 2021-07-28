@@ -22,7 +22,7 @@
         <button
           text="  Contact this person"
           class="btn btn-primary"
-          style="background-color: rgb(51, 133, 240); color: white"
+          style="background-color: #39A2DB; color: white"
           (tap)="onDetail(ownerId)"
         ></button>
       </ng-template>
@@ -31,13 +31,13 @@
           <button
             text="Edit"
             class="btn btn-primary"
-            style="background-color: rgb(51, 133, 240); color: white"
+            style="background-color: #39A2DB; color: white"
             (tap)="onEditPost()"
           ></button>
           <button
             text="Delete"
             class="btn btn-primary"
-            style="background-color: rgb(51, 133, 240); color: white"
+            style="background-color: #39A2DB; color: white"
             (tap)="onDeletePost()"
           ></button>
         </FlexboxLayout>
@@ -55,7 +55,7 @@
       ></textView
       ><br />
       <button
-        style="background-color: rgb(51, 133, 240); color: white"
+        style="background-color: #39A2DB; color: white"
         text="Submit"
         (tap)="addComment(comment.text)"
       ></button>
@@ -71,12 +71,12 @@
             <div *ngIf="comment.commentOwnerId == userId">
               <FlexboxLayout flexDirection="row">
                 <button
-                  style="background-color: rgb(51, 133, 240); color: white;"
+                  style="background-color: #39A2DB; color: white;"
                   text="Edit"
                   (tap)="onEditComment(comment)"
                 ></button>
                 <button
-                  style="background-color: rgb(51, 133, 240); color: white; "
+                  style="background-color: #39A2DB; color: white; "
                   text="Delete"
                   (tap)="onDeleteComment(comment._id)"
                 ></button>

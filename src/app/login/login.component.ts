@@ -38,7 +38,7 @@ export class LoginComponent {
         alert("Please enter your correct email and password");
       }
       this.router.navigate(["loading"]);
-    }, 3000);
+    }, 4000);
   }
 
   onSignUp() {

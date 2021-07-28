@@ -1,7 +1,7 @@
 <StackLayout style="background-color: white;">
   <FlexboxLayout
     flexDirection="row"
-    style="background-color: lightgray; height: 40; text-align: end;"
+    style="background-color: #A2DBFA; height: 40; text-align: end;"
   >
     <TextField
       #newCity
@@ -18,37 +18,37 @@
     <Button
       text="Change Location"
       class="btn btn-primary"
-      style="background-color: rgb(51, 133, 240); color: white;margin: 10px"
+      style="background-color:#39A2DB; color: white;margin: 10px"
       (tap)="changeLocation(newCity.text, newState.text)"
     ></Button> </FlexboxLayout
   >>
   <FlexboxLayout
     flexDirection="row"
-    style="background-color: lightgray; height: 40;"
+    style="background-color: #E8F0F2; height: 40;"
   >
     <Button
       text="Provider List"
       class="btn btn-primary"
       [nsRouterLink]="['/providers']"
-      style="background-color: rgb(51, 133, 240); color: white;margin: 10px"
+      style="background-color:#39A2DB; color: white;margin: 10px"
     ></Button>
     <Button
       text="Request List"
       [nsRouterLink]="['/requests']"
       class="btn btn-primary"
-      style="background-color: rgb(51, 133, 240); color: white;margin: 10px"
+      style="background-color: #39A2DB; color: white;margin: 10px"
     ></Button>
     <Button
       text="My Profile"
       [nsRouterLink]="['/profile']"
       class="btn btn-primary"
-      style="background-color: rgb(51, 133, 240); color: white;margin: 10px"
+      style="background-color: #39A2DB; color: white;margin: 10px"
     ></Button>
     <Button
       text="Add Post"
       [nsRouterLink]="['/posts']"
       class="btn btn-primary"
-      style="background-color: rgb(51, 133, 240); color: white;margin: 10px"
+      style="background-color: #39A2DB; color: white;margin: 10px"
     ></Button>
   </FlexboxLayout>
   <GridLayout>
