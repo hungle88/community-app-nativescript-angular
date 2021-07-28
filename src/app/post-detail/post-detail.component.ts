@@ -14,6 +14,7 @@ export class PostDetailComponent implements OnInit {
   postDetail: any;
   id: any;
   userId: any;
+  commentState: any;
   constructor(
     private main: MainServiceService,
     private router: RouterExtensions,
@@ -21,6 +22,7 @@ export class PostDetailComponent implements OnInit {
   ) {
     this.id = this.route.snapshot.params.id;
     this.userId = AppSettings.getString("userId");
+   
     console.log("this.id");
 
     console.log(this.id);
@@ -44,7 +46,7 @@ export class PostDetailComponent implements OnInit {
     // console.log(commentContent);
     // console.log(this.id);
     this.main.addComment(commentContent, this.id);
-
+    this.commentState = "";
     setTimeout(() => {
       this.main.getPostDetail(this.id).then(
         (response: HttpResponse) => {
