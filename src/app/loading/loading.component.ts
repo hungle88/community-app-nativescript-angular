@@ -15,6 +15,9 @@ export class LoadingComponent implements OnInit {
     private route: ActivatedRoute) { 
       if (AppSettings.getString("token")) {
         this.router.navigate(["providers"]);
+      } else {
+        this.router.navigate(["login"]);
+
       }
     }
 
