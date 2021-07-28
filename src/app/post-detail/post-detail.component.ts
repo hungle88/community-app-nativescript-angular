@@ -80,8 +80,11 @@ export class PostDetailComponent implements OnInit {
 
   onDeletePost() {
     this.main.deletePost(this.id);
-
-    this.router.back();
+    if (this.postDetail.type == "Service Providers")
+      this.router.navigate(["providers"]);
+    if (this.postDetail.type == "Help Requests") {
+      this.router.navigate(["requests"]);
+    }
   }
 
   onDeleteComment(comId: any) {

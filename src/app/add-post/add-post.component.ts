@@ -32,14 +32,18 @@ export class AddPostComponent implements OnInit {
       ownerId: AppSettings.getString("userId")
     };
     console.log(newPost);
-    this.main.addPost(newPost);
 
-    if (newPost.type == "Help Requests") {
-      this.router.navigate(["requests"]);
-    }
-    if (newPost.type == "Service Providers") {
-      this.router.navigate(["providers"]);
-    }
+    this.main.addPost(newPost);
+setTimeout(() => {
+  if (newPost.type == "Help Requests") {
+    this.router.navigate(["requests"]);
+  }
+  if (newPost.type == "Service Providers") {
+    this.router.navigate(["providers"]);
+
+  }
+}, 1000);
+
   }
 
   public onchange(args: SelectedIndexChangedEventData) {

@@ -37,7 +37,7 @@ export class LoginComponent {
       if (!AppSettings.getString("token")) {
         alert("Please enter your correct email and password");
       }
-      this.router.navigate(["providers"]);
+      this.router.navigate(["loading"]);
     }, 3000);
   }
 
