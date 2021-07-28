@@ -40,6 +40,7 @@ export class SignupComponent implements OnInit {
     this.main.signup(signupForm);
 
     this.router.navigate(["login"]);
+    alert("Signed up successfully!")
   }
   ngOnInit(): void {}
 }
