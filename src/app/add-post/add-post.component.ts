@@ -59,5 +59,10 @@ setTimeout(() => {
   public onclose() {
     console.log("Drop Down closed.");
   }
+
+  logout() {
+    AppSettings.clear();
+    this.router.navigate(["login"]);
+  }
   ngOnInit(): void {}
 }

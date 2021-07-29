@@ -34,5 +34,10 @@ export class MyProfileComponent implements OnInit {
   onEdit() {
     this.router.navigate(["profile/edit"]);
   }
+
+  logout() {
+    AppSettings.clear();
+    this.router.navigate(["login"]);
+  }
   ngOnInit(): void {}
 }

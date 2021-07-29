@@ -1,5 +1,14 @@
 <ActionBar title="Add New Post">
   <NavigationButton visibility="collapsed"></NavigationButton>
+  <ActionItem ios.position="right">
+    <GridLayout width="100">
+      <button
+        text="Log Out"
+        (tap)="logout()"
+        style="background-color: grey; color: white; height: 40px; text-align: center;"
+      ></button>
+    </GridLayout>
+  </ActionItem>
 </ActionBar>
 
 <StackLayout style="width: 500px; margin-top: 50px;" class="form">

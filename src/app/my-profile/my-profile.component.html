@@ -1,5 +1,14 @@
 <ActionBar title="My Profile">
   <NavigationButton visibility="collapsed"></NavigationButton>
+  <ActionItem ios.position="right">
+    <GridLayout width="100">
+      <button
+        text="Log Out"
+        (tap)="logout()"
+        style="background-color: grey; color: white; height: 40px; text-align: center;"
+      ></button>
+    </GridLayout>
+  </ActionItem>
 </ActionBar>
 
 <StackLayout>
