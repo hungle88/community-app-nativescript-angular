@@ -18,6 +18,7 @@ export class LoadingComponent implements OnInit {
           this.router.navigate(["providers"]);
         } else {
           this.router.navigate(["login"]);
+          alert("Please enter your correct email and password")
   
         }  
       }, 4000);
