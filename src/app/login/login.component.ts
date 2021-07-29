@@ -32,13 +32,14 @@ export class LoginComponent {
     const loginForm = { email: email.toLocaleLowerCase(), password: password };
     console.log(loginForm);
     this.main.login(loginForm);
+    this.router.navigate(["loading"]);
 
-    setTimeout(() => {
-      if (!AppSettings.getString("token")) {
-        alert("Please enter your correct email and password");
-      }
-      this.router.navigate(["loading"]);
-    }, 4000);
+    // setTimeout(() => {
+    //   if (!AppSettings.getString("token")) {
+    //     alert("Please enter your correct email and password");
+    //   }
+    //   this.router.navigate(["loading"]);
+    // }, 4000);
   }
 
   onSignUp() {

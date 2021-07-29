@@ -13,12 +13,15 @@ export class LoadingComponent implements OnInit {
   constructor(  private router: RouterExtensions,
     private main: MainServiceService,
     private route: ActivatedRoute) { 
-      if (AppSettings.getString("token")) {
-        this.router.navigate(["providers"]);
-      } else {
-        this.router.navigate(["login"]);
+      setTimeout(() => {
+        if (AppSettings.getString("token")) {
+          this.router.navigate(["providers"]);
+        } else {
+          this.router.navigate(["login"]);
+  
+        }  
+      }, 4000);
 
-      }
     }
 
   ngOnInit(): void {
