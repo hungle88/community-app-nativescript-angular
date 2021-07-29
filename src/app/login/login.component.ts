@@ -16,12 +16,10 @@ import { RouterExtensions } from "@nativescript/angular";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent {
-
   constructor(
     private router: RouterExtensions,
     private main: MainServiceService,
-    private route: ActivatedRoute,
-    
+    private route: ActivatedRoute
   ) {
     if (AppSettings.getString("token")) {
       this.router.navigate(["providers"]);
@@ -33,13 +31,6 @@ export class LoginComponent {
     console.log(loginForm);
     this.main.login(loginForm);
     this.router.navigate(["loading"]);
-
-    // setTimeout(() => {
-    //   if (!AppSettings.getString("token")) {
-    //     alert("Please enter your correct email and password");
-    //   }
-    //   this.router.navigate(["loading"]);
-    // }, 4000);
   }
 
   onSignUp() {

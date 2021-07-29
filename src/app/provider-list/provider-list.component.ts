@@ -19,9 +19,9 @@ export class ProviderListComponent implements OnInit {
       (response: HttpResponse) => {
         const content = response.content;
         this.providerList = JSON.parse(JSON.stringify(content));
-        console.log("this.providerList");
+        // console.log("this.providerList");
 
-        console.log(this.providerList);
+        // console.log(this.providerList);
       },
       e => {}
     );

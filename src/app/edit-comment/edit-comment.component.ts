@@ -22,9 +22,9 @@ export class EditCommentComponent implements OnInit {
   ) {
     const query = JSON.parse(JSON.stringify(this.route.queryParams));
 
-    console.log("query");
+    // console.log("query");
 
-    console.log(query._value);
+    // console.log(query._value);
     this.postId = query._value.postId;
     this.commentId = query._value.commentId;
     this.commentContent = query._value.commentContent;
@@ -41,7 +41,7 @@ export class EditCommentComponent implements OnInit {
       commentContent: content,
   
     };
-    console.log(editForm);
+    // console.log(editForm);
     this.main.editComment(editForm, this.postId, this.commentId);
 
     this.router.navigate(["post", this.postId]);

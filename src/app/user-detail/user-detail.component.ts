@@ -20,9 +20,9 @@ export class UserDetailComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.id = this.route.snapshot.params.id;
-    console.log("this.id");
+    // console.log("this.id");
 
-    console.log(this.id);
+    // console.log(this.id);
     this.main.getUserDetail(this.id).then(
       (response: HttpResponse) => {
         const content = response.content;

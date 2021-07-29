@@ -23,7 +23,7 @@ export class EditProfileComponent implements OnInit {
         const content = response.content;
         this.userDetail = JSON.parse(JSON.stringify(content))[0];
 
-        console.log(this.userDetail);
+        // console.log(this.userDetail);
       },
       e => {}
     );
@@ -73,7 +73,7 @@ export class EditProfileComponent implements OnInit {
       zipcode: zipcode,
       phone: phone
     };
-    console.log(editForm);
+    // console.log(editForm);
     this.main.editProfile(editForm, this.userDetail._id);
 
     this.router.navigate(["profile"]);

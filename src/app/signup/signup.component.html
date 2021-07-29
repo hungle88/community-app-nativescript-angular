@@ -4,41 +4,39 @@
   style="width: 500px;"
   class="form"
 >
-  <StackLayout class="input-field">
-    <TextField required #fullName hint="Fullname" class="input"></TextField>
+      <StackLayout class="input-field">
+        <TextField required #fullName hint="Fullname" class="input"></TextField>
 
-    <TextField required #userEmail hint="Email" class="input"></TextField>
-    <TextField
-      required
-      #userPassword
-      hint="Password"
-      secure="true"
-      class="input"
-    ></TextField>
-    <TextField required #address hint="Address" class="input"></TextField>
-    <TextField required #city hint="City" class="input"></TextField>
-    <TextField required #state hint="State" class="input"></TextField>
-    <TextField required #zipcode hint="Zipcode" class="input"></TextField>
-    <TextField required #phone hint="Phone" class="input"></TextField>
-  </StackLayout>
+        <TextField required #userEmail hint="Email" class="input"></TextField>
+        <TextField
+          required
+          #userPassword
+          hint="Password"
+          secure="true"
+          class="input"
+        ></TextField>
+        <TextField required #address hint="Address" class="input"></TextField>
+        <TextField required #city hint="City" class="input"></TextField>
+        <TextField required #state hint="State" class="input"></TextField>
+        <TextField required #zipcode hint="Zipcode" class="input"></TextField>
+        <TextField required #phone hint="Phone" class="input"></TextField>
+      </StackLayout>
 
-  <FlexboxLayout>
-    <Button
-      style="background-color: #39A2DB;color: white"
-      text="Sign Up"
-      class="btn btn-primary"
-      (tap)="
-        onSubmit(
-          fullName.text,
-          userEmail.text,
-          userPassword.text,
-          address.text,
-          city.text,
-          state.text,
-          zipcode.text,
-          phone.text
-        )
-      "
-    ></Button>
-  </FlexboxLayout>
+      <Button
+        style="background-color: #39A2DB;color: white"
+        text="Sign Up"
+        class="btn btn-primary"
+        (tap)="
+          onSubmit(
+            fullName.text,
+            userEmail.text,
+            userPassword.text,
+            address.text,
+            city.text,
+            state.text,
+            zipcode.text,
+            phone.text
+          )
+        "
+      ></Button>
 </StackLayout>

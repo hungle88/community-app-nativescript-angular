@@ -66,9 +66,9 @@ export class PostDetailComponent implements OnInit {
   }
 
   onEditComment(comment: any) {
-    console.log("comment");
+    // console.log("comment");
 
-    console.log(comment);
+    // console.log(comment);
 
     this.router.navigate(
       ["post", this.postDetail.ownerId, "comment", comment._id, "edit"],
