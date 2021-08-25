@@ -2,6 +2,7 @@
 # NativeScript - Angular Mobile App
 ## Help connect volunteers and people who need help in local area
 ### General use case and requirements
+* User has to sign up and login to use application.
 * Every user has a profile page, shows their name, address, contact information (this helps users to reach each other easily).
 * User 1 needs the backyard lawn to me mowed.
 * User 2 has a lawn mower and would like to contribute helping their community.
