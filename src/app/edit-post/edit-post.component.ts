@@ -22,15 +22,11 @@ export class EditPostComponent implements OnInit {
   ) {
     this.id = this.route.snapshot.params.id;
     this.userId = AppSettings.getString("userId");
-    // console.log("this.id");
 
-    // console.log(this.id);
     this.main.getPostDetail(this.id).then(
       (response: HttpResponse) => {
         const content = response.content;
         this.postDetail = JSON.parse(JSON.stringify(content))[0];
-        // console.log("this.postDetail");
-        // console.log(this.postDetail);
       },
       e => {}
     );
@@ -46,7 +42,6 @@ export class EditPostComponent implements OnInit {
       city: AppSettings.getString("city"),
       state: AppSettings.getString("state")
     };
-    // console.log(editForm);
     this.main.editPost(editForm, this.postDetail._id);
 
     this.router.navigate(["post", this.postDetail._id]);

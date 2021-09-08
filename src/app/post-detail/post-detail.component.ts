@@ -43,8 +43,7 @@ export class PostDetailComponent implements OnInit {
     const commentContent = {
       commentContent: comment
     };
-    // console.log(commentContent);
-    // console.log(this.id);
+
     this.main.addComment(commentContent, this.id);
     this.commentState = "";
     setTimeout(() => {
@@ -66,10 +65,6 @@ export class PostDetailComponent implements OnInit {
   }
 
   onEditComment(comment: any) {
-    // console.log("comment");
-
-    // console.log(comment);
-
     this.router.navigate(
       ["post", this.postDetail.ownerId, "comment", comment._id, "edit"],
       {
